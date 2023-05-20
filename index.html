@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Clock</title>
+  <link href="embed.svg" rel="icon" />
+  <style>
+    
+    body {
+      background: #eee;
+    }
+
+    * {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    }
+
+    object {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .filler {
+      background: #20B7AF;
+      position: absolute;
+      bottom: 50%;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    code {
+      color: crimson;
+      background-color: #3990B4;
+      padding: 2px;
+      font-size: 105%;
+      border-radius: 20px;
+      font-family: monospace, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+  </style>
+</head>
+
+<body>
+  <div class="filler">
+    <h1 align="center" style="position: relative; top: 30px">HTML Clock</h1>
+    <p align="center" style="position: relative; top:20px">
+      Insert a clock into your HTML webpage! Just use<br>
+      <code>
+        &lt;object height=&quot;100&quot; width=&quot;100&quot; data=&quot;<script>document.write(document.location.href+"embed.svg")</script>&quot;&gt;&lt;/object&gt;
+      </code><br>
+      If you ask why use <code>&lt;object&gt;</object></code> instead of 
+      <code>&lt;img&gt;</code>, SVG images embed using<code>&lt;img&gt;</code> get stripped of JS, which is required to tell the time. 
+      <code>&lt;object&gt;</code> on the other hand does not.
+    </p>
+  </div>
+
+  <object height="45%" width="45%" data="embed.svg"></object>
+
+
+</body>
+
+</html>
