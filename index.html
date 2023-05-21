@@ -44,12 +44,25 @@
 </head>
 
 <body>
+    
+  <script>
+    function getPath() {
+      var url=location.href;
+      var url_parts=url.split('/');
+      
+      if (!url_parts[url_parts.length-1].endsWith('/')) {
+        url_parts.pop();
+      };
+      return url_parts.join('/')+'/' 
+    }
+  </script>
+
   <div class="filler">
     <h1 align="center" style="position: relative; top: 30px">HTML Clock</h1>
     <p align="center" style="position: relative; top:20px">
       Insert a clock into your HTML webpage! Just use<br>
       <code>
-        &lt;object height=&quot;100&quot; width=&quot;100&quot; data=&quot;<script>document.write(document.location.href+"embed.svg")</script>&quot;&gt;&lt;/object&gt;
+        &lt;object height=&quot;100&quot; width=&quot;100&quot; data=&quot;<script>document.write(getPath()+"embed.svg")</script>&quot;&gt;&lt;/object&gt;
       </code><br>
       If you ask why use <code>&lt;object&gt;</object></code> instead of 
       <code>&lt;img&gt;</code>, SVG images embed using<code>&lt;img&gt;</code> get stripped of JS, which is required to tell the time. 
@@ -58,7 +71,6 @@
   </div>
 
   <object height="45%" width="45%" data="embed.svg"></object>
-
 
 </body>
 
